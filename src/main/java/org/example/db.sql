@@ -38,11 +38,10 @@ CREATE TABLE IF NOT EXISTS mail
 );
 
 CREATE TABLE IF NOT EXISTS cd(
-    id      INT AUTO_INCREMENT,
     year    INT,
     artist  VARCHAR(100),
     title   VARCHAR(255),
-    PRIMARY KEY (id)
+    PRIMARY KEY (title)
 );
 
 -- Вставка демо данних в БД
@@ -78,3 +77,13 @@ VALUES
     ('2001-05-17 12:49:23', 'phil', 'mars', 'tricia', 'saturn', 873),
     ('2001-05-19 22:21:51', 'gene', 'saturn', 'gene', 'venus', 23992);
 
+INSERT INTO cd (year, artist, title)
+VALUES
+    (1990, 'Iona', 'Iona'),
+    (1992, 'Charlie Peacock', 'Lie Down in the Grass'),
+    (1993, 'Iona', 'Beyond These Shores'),
+    (1987, 'The 77s', 'The 77s'),
+    (1990, 'Michael Gettel', 'Return'),
+    (1989, 'Richard Souther', 'Cross Currents'),
+    (1996, 'Charlie Peacock', 'strangelanguage'),
+    (1982, 'Undercover', 'Undercover');
