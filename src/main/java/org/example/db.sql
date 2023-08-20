@@ -25,6 +25,26 @@ CREATE TABLE IF NOT EXISTS profile
     PRIMARY KEY (id)
 );
 
+--
+CREATE TABLE IF NOT EXISTS mail
+(
+    t       DATETIME,
+    srcuser CHAR(8),
+    srchost CHAR(20),
+    dstuser CHAR(8),
+    dsthost CHAR(20),
+    size    BIGINT,
+    INDEX (t)
+);
+
+CREATE TABLE IF NOT EXISTS cd(
+    id      INT AUTO_INCREMENT,
+    year    INT,
+    artist  VARCHAR(100),
+    title   VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
 -- Вставка демо данних в БД
 INSERT INTO profile (name, birth, color, foods, cats)
 VALUES
@@ -39,3 +59,21 @@ VALUES
     ('Dick', '1952-08-20', 'green', 'lutefisk,fadge', 0),
     ('Tony', '1960-05-01', 'white', 'burrito,pizza', 0);
 
+INSERT INTO mail (t, srcuser, srchost, dstuser, dsthost, size)
+VALUES
+    ('2001-05-11 10:15:08', 'barb', 'saturn', 'tricia', 'mars', 58274),
+    ('2001-05-12 12:48:13', 'tricia', 'mars', 'gene', 'venus', 194925),
+    ('2001-05-12 15:02:49', 'phil', 'mars', 'phil', 'saturn', 1048),
+    ('2001-05-13 13:59:18', 'barb', 'saturn', 'tricia', 'venus', 271),
+    ('2001-05-14 09:31:37', 'gene', 'venus', 'barb', 'mars', 2291),
+    ('2001-05-14 11:52:17', 'phil', 'mars', 'tricia', 'saturn', 5781),
+    ('2001-05-14 14:42:21', 'barb', 'venus', 'barb', 'venus', 98151),
+    ('2001-05-14 17:03:01', 'tricia', 'saturn', 'phil', 'venus', 2394482),
+    ('2001-05-15 07:17:48', 'gene', 'mars', 'gene', 'saturn', 3824),
+    ('2001-05-15 08:50:57', 'phil', 'venus', 'phil', 'venus', 978),
+    ('2001-05-15 10:25:52', 'gene', 'mars', 'tricia', 'saturn', 998532),
+    ('2001-05-15 17:35:31', 'gene', 'saturn', 'gene', 'mars', 3856),
+    ('2001-05-16 09:00:28', 'gene', 'venus', 'barb', 'mars', 613),
+    ('2001-05-16 23:04:19', 'phil', 'venus', 'barb', 'venus', 10294),
+    ('2001-05-17 12:49:23', 'phil', 'mars', 'tricia', 'saturn', 873),
+    ('2001-05-19 22:21:51', 'gene', 'saturn', 'gene', 'venus', 23992);
