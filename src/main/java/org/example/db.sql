@@ -37,11 +37,19 @@ CREATE TABLE IF NOT EXISTS mail
     INDEX (t)
 );
 
+-- Создать тимчасову таблицю. Вона існує поки є зєднання з сервером.
+-- CREATE TEMPORARY TABLE mail SELECT * FROM mail;
+
 CREATE TABLE IF NOT EXISTS cd(
     year    INT,
     artist  VARCHAR(100),
     title   VARCHAR(255),
     PRIMARY KEY (title)
+);
+
+CREATE TABLE metal
+(
+    name    VARCHAR(20)
 );
 
 -- Вставка демо данних в БД
@@ -87,3 +95,14 @@ VALUES
     (1989, 'Richard Souther', 'Cross Currents'),
     (1996, 'Charlie Peacock', 'strangelanguage'),
     (1982, 'Undercover', 'Undercover');
+
+INSERT INTO metal (name)
+VALUES
+    ('copper'),
+    ('gold'),
+    ('iron'),
+    ('lead'),
+    ('mercury'),
+    ('platinum'),
+    ('silver'),
+    ('tin');
