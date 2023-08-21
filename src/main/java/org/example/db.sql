@@ -106,3 +106,21 @@ VALUES
     ('platinum'),
     ('silver'),
     ('tin');
+
+-- добавляем закінчення до металів
+# UPDATE metal SET name = CONCAT(name,'ide');
+# SELECT name FROM metal;
+
+-- удаляемо закінчення з металів
+# UPDATE metal SET name = LEFT(name,LENGTH(name)-3);
+# SELECT name FROM metal;
+
+-- виконати пошук за зразком, а не буквальне порівняння
+# SELECT name FROM metal WHERE name LIKE 'co%';
+# SELECT name FROM metal WHERE name LIKE '%er%';
+# SELECT name FROM metal WHERE name LIKE '__pp%';
+# SELECT name FROM metal WHERE name NOT LIKE '%i%';
+
+-- додаємо інтервал до дати
+# SELECT CURDATE(), DATE_ADD(CURDATE(), INTERVAL  25 DAY);
+# SELECT CURDATE(), DATE_SUB(CURDATE(), INTERVAL  25 DAY);
